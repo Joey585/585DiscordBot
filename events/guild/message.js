@@ -147,7 +147,7 @@ module.exports = async (Discord, client, message) => {
             const url = urlencode(`${message.content}`)
           // message.channel.send(`Testing the url sent by ${message.author}...`)
             message.channel.startTyping();
-            axios.get(`https://ipqualityscore.com/api/json/url/2xZ9JaEVUrGEbwYcaCyqzEhrUrMWy5DH/${url}`)
+            axios.get(`https://ipqualityscore.com/api/json/url//${url}`)
                 .then((res) => {
                     if (res.data.malware === true || res.data.phishing === true || res.data.unsafe === true) {
                         message.delete();
