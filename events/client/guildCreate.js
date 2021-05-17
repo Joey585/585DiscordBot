@@ -13,4 +13,5 @@ module.exports = async (client, message, Discord, guild) => {
        premium: false
     });
    server.save();
+
 }
