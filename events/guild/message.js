@@ -14,7 +14,7 @@ module.exports = async (Discord, client, message) => {
         const serverConfig = await serverModel.findOne({
             serverID: message.guild.id
         })
-        if (serverConfig) {
+        if (!serverConfig) {
             custom = serverConfig.prefix;
         } else {
             custom = prefix;
@@ -55,7 +55,6 @@ module.exports = async (Discord, client, message) => {
     }catch(err){
         console.log(err)
     }
-    // commit test1
     let serverData;
     try {
         serverData = await serverModel.findOne( { serverID: message.guild.id} );
@@ -76,8 +75,6 @@ module.exports = async (Discord, client, message) => {
     } catch (err) {
         console.log(err)
     }
-
-
 
     const validPermissions = [
         "CREATE_INSTANT_INVITE",
