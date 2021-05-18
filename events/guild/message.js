@@ -1,6 +1,7 @@
 const profileModel = require('../../models/profileSchema');
 const serverModel = require('../../models/serverSchema');
-const { prefix } = require('../../config.json');
+const {MessageEmbed} = require("discord.js");
+const {prefix} = require('../../config.json');
 const cooldowns = new Map();
 
 
@@ -182,8 +183,10 @@ module.exports = async (Discord, client, message) => {
 
             if (currentTime < experationTime) {
                 const timeLeft = (experationTime - currentTime) / 1000
-
-                return message.reply(`COOLDOWN: You have ${timeLeft.toFixed(1)} more seconds until you can use this command!`)
+                const cooldownEmbed = new MessageEmbed()
+                    .setTitle('<a:alert585:844269273295093822> Cooldown Alert! <a:alert585:844269273295093822>')
+                    .setDescription(`${message.author} slow down! You have ${timeLeft.toFixed(1)} seconds!`)
+                return message.channel.send(cooldownEmbed);
             }
         }
 

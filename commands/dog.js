@@ -8,6 +8,7 @@ module.exports = {
     permissions: [],
     cooldown: 10,
     execute(client, message) {
+        message.channel.startTyping();
         axios.get('https://dog.ceo/api/breeds/image/random')
             .then((res) => {
                 const dogEmbed = new MessageEmbed()
@@ -15,7 +16,9 @@ module.exports = {
                     .setImage(res.data.message)
                     .setFooter('API: https://dog.ceo')
                 message.lineReplyNoMention(dogEmbed);
+                message.channel.stopTyping();
             }).catch((err) => {
+            message.channel.stopTyping();
             return message.lineReplyNoMention('Error getting doggy picture <a:crie:822496459353358366>');
         });
     }
