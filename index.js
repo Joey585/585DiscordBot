@@ -22,4 +22,4 @@ mongoose.connect(`${mongodbSRV}`, {
     console.log(err);
 })
 
-client.login(token);
+client.login(token)

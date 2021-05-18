@@ -12,8 +12,8 @@ module.exports = {
 
         const mallenEmbed = new MessageEmbed()
             .setTitle('Random Mallen Picture')
-            .setDescription(`${mallenLinks.length} pictures of mallen!`)
             .setImage(mallenLinks[mallenNumber])
+            .setFooter(`${mallenLinks.length} pictures of mallen!`)
         return message.lineReplyNoMention(mallenEmbed);
     }
 
