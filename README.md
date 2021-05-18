@@ -1,6 +1,6 @@
 <h1> Introducing 585 Bot! </h1>
 
-<p> This bot has plenty of feautures to keep your server safe and secure! </p>
+<p> This bot has plenty of features to keep your server safe and secure! </p>
 
 <h2> To do list: </h2>
 
@@ -50,10 +50,13 @@ Suggestions
 Snipe last deleted message and edited message :white_check_mark:
 <hr>
 <br>
-This bot was coded by <strong>Joey585#0252<strong>
+This bot was coded by <strong>Joey585#0252</strong>
 
 <h1> Installation </h1>
 
-Unforunately, There is no direct way to download.
+Unfortunately, There is no direct way to download.
 <br>
 But, if you would like you can use the commands in my bot for your own! :grin:
+<hr>
+Or you can invite the bot to your server with one click of a link!
+<h6>Click <a href="https://discord.com/api/oauth2/authorize?client_id=838505768231764007&permissions=8&scope=bot">here</a> to invite it to your server!</h6>
