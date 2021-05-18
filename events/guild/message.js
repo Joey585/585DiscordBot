@@ -7,8 +7,7 @@ const urlencode = require('urlencode')
 
 
 module.exports = async (Discord, client, message) => {
-
-    client.prefix = async function(message) {
+    client.prefix = async function (message) {
         let custom;
 
         const serverConfig = await serverModel.findOne({

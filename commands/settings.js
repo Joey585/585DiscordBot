@@ -24,32 +24,8 @@ module.exports = {
 
             await message.lineReplyNoMention(settingEmbed);
         }
-        switch (args[0]) {
-            case 'welcome':
-                const serverData = await serverModel.findOne({serverID: message.guild.id});
 
-                if (serverData.settings.welcomeMessage === false) {
-                    const serverChange = serverModel.findOneAndUpdate({
-                        guildID: message.guild.id
-                    }, {
-                        $set: {
-                            welcome: true
-                        }
-                    }).then(() => {
-                        return message.lineReplyNoMention('Toggled your welcome setting!')
-                    });
-
-                } else {
-                    const serverChange = serverModel.findOneAndUpdate({
-                        guildID: message.guild.id
-                    }, {
-                        $set: {
-                            welcome: false
-                        }
-                    })
-                }
-                break;
-        }
+        // TODO: Fix settings
     }
 
 
