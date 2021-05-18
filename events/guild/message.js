@@ -2,13 +2,18 @@ const profileModel = require('../../models/profileSchema');
 const serverModel = require('../../models/serverSchema');
 const { prefix } = require('../../config.json');
 const cooldowns = new Map();
-const axios = require('axios');
-const urlencode = require('urlencode')
 
 
 module.exports = async (Discord, client, message) => {
 
-    client.prefix = async function(message) {
+    if (message.channel.type === 'dm') {
+        if (message.author.bot === true) {
+            return;
+        }
+        return message.lineReplyNoMention('You cannot execute a command in direct messages.');
+    }
+
+    client.prefix = async function (message) {
         let custom;
 
         const serverConfig = await serverModel.findOne({
