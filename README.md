@@ -8,7 +8,7 @@ New and improved command handler :white_check_mark:
 <br>
 Customizable command cooldown :white_check_mark:
 <br>
-Different pages of help commands
+Different pages of help commands :white_check_mark:
 <br>
 Image manipulation
 <br>
@@ -25,7 +25,7 @@ Music!!!! :white_check_mark:
 <h3> APIs </h3>
 Domain search :white_check_mark:
 <br>
-Dog Images
+Dog Images :white_check_mark:
 <br>
 Cat images
 <br>
