@@ -20,7 +20,7 @@ module.exports = async (Discord, client, message) => {
         const serverConfig = await serverModel.findOne({
             serverID: message.guild.id
         })
-        if (!serverConfig) {
+        if (serverConfig) {
             custom = serverConfig.prefix;
         } else {
             custom = prefix;
@@ -192,6 +192,17 @@ module.exports = async (Discord, client, message) => {
 
         timeStamps.set(message.author.id, currentTime);
         setTimeout(() => timeStamps.delete(message.author.id), cooldownAmount);
+    }
+
+    if (!command && message.content) {
+        if (message.mentions.members.first()) {
+            if (message.mentions.members.first().id === client.user.id) {
+                const hello = new MessageEmbed()
+                    .setTitle('Hello!')
+                    .setDescription(`**Hi! My name is 585 Bot.**\nMy prefix is \`${p}\``)
+                return message.lineReplyNoMention(hello);
+            }
+        }
     }
 
     if (command) {

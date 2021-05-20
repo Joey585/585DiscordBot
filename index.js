@@ -1,9 +1,13 @@
 const Discord = require('discord.js');
 require('discord-reply');
 const client = new Discord.Client();
-const { token } = require('./config.json');
-const { mongodbSRV } = require('./config.json');
+const {token} = require('./config.json');
+const {mongodbSRV} = require('./config.json');
 const mongoose = require('mongoose');
+
+client.on('ready', () => {
+    client.user.setPresence({activity: {name: `Ping Me!`}, status: 'dnd'})
+})
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();

@@ -1,8 +1,7 @@
 const serverModel = require('../../models/serverSchema');
-const { MessageEmbed } = require('discord.js')
+const {MessageEmbed} = require('discord.js');
 
 module.exports = async(client, discord, member) => {
-
     let welcomeRole = member.guild.roles.cache.find(r => r.name === "member");
     if (!welcomeRole) {
       let role = await member.guild.roles.create({
