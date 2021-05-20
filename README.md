@@ -16,7 +16,7 @@ Working repository :white_check_mark:
 <br>
 Settings for the user to turn on and off :white_check_mark:
 <br>
-A message when the bot joins
+A message when the bot joins :white_check_mark:
 <br>
 Prefix changer :white_check_mark:
 <br>
