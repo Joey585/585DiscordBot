@@ -205,13 +205,15 @@ module.exports = async (Discord, client, message) => {
         }
     }
 
-    if (command) {
+    if (command || message.content.startsWith(p)) {
 
         try {
             command.execute(client, message, args, Discord);
         } catch (err) {
-            message.channel.send('There was an error! Try doing %help')
-            console.log(err)
+            const invalidCommand = new MessageEmbed()
+                .setTitle('<:404:844996531496419338>Invalid Command!<:404:844996531496419338>')
+                .setDescription(`**You have inputted an invalid command.\n\n\`${p}help\`**`)
+            return message.lineReplyNoMention(invalidCommand)
         }
     }
 };
