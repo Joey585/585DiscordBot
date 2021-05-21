@@ -56,7 +56,7 @@ module.exports = async (Discord, client, message) => {
                     'otterPlushy': false
                 }
             });
-            profile.save();
+            await profile.save();
         }
     }catch(err){
         console.log(err)
@@ -76,7 +76,7 @@ module.exports = async (Discord, client, message) => {
                     },
                     premium: false
             });
-            server.save();
+            await server.save();
         }
     } catch (err) {
         console.log(err)
@@ -213,6 +213,7 @@ module.exports = async (Discord, client, message) => {
             const invalidCommand = new MessageEmbed()
                 .setTitle('<:404:844996531496419338>Invalid Command!<:404:844996531496419338>')
                 .setDescription(`**You have inputted an invalid command.\n\n\`${p}help\`**`)
+            console.log(err);
             return message.lineReplyNoMention(invalidCommand)
         }
     }
